@@ -4,6 +4,10 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+
+  daisyui: {
+    themes: ['light', 'dark'], // Enable light and dark themes
+  },
   theme: {
     extend: {},
   },

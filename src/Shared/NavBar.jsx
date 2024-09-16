@@ -1,7 +1,18 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaToggleOn } from "react-icons/fa6";
 
 
 const NavBar = () => {
+
+  const [theme, setTheme] = useState('light');
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 const NavOption=<>
 
 <Link>  <li><a>Item 1</a></li></Link>
@@ -42,7 +53,9 @@ const NavOption=<>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+        <button className="btn" onClick={toggleTheme}>
+        <FaToggleOn />  change Theme
+      </button>
         </div>
       </div>
     );

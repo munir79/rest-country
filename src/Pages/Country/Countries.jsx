@@ -7,15 +7,20 @@ const Countries = ({country}) => {
         }=country;
     console.log(country);
     return (
-        <div>
-            <h3>{area} </h3>
-            <h3>{capital} </h3>
-            <img src={flags.png} alt="" />
-            <h2>{name.common} </h2>
-            <h2>{population} </h2>
-            <h2>{region} </h2>
-          
-        </div>
+        <div className="card card-compact mb-4 bg-base-100 w-96 shadow-xl">
+  <figure>
+    <img
+      src={flags.png}
+      alt="Shoes" />
+  </figure>
+  <div className="card-body">
+    <h2 className="card-title text-pink-600">{name.common}</h2>
+    <p>If a dog chews shoes whose shoes does he choose?</p>
+    <div className="card-actions justify-center">
+      <button className="btn btn-primary">Visit</button>
+    </div>
+  </div>
+</div>
     );
 };
 
