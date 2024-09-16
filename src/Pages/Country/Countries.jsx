@@ -15,6 +15,7 @@ const Countries = ({country}) => {
   </figure>
   <div className="card-body">
     <h2 className="card-title text-pink-600">{name.common}</h2>
+    <h3>Region:{region} </h3>
     <p>If a dog chews shoes whose shoes does he choose?</p>
     <div className="card-actions justify-center">
       <button className="btn btn-primary">Visit</button>
