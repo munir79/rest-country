@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import MainLayOut from './MAinLayOut/MainLayOut.jsx';
 import Home from './Pages/Home.jsx';
+import Country from './Pages/Country/Country.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>
+      },
+      {
+        path:'/country/:cca3',
+        element:<Country></Country>,
+        loader: ({ params }) => fetch(`https://restcountries.com/v3.1/alpha/${params.cca3}`)
       }
      ]
   },

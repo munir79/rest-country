@@ -7,6 +7,7 @@ const Home = () => {
     const [country, setCountry] = useState([]);
     const [filterCountry,setfilterCountry]=useState([]);
     const [search,setSearch]=useState("");
+ 
     
     useEffect(() => {
         fetch('https://restcountries.com/v3.1/all')
@@ -14,14 +15,21 @@ const Home = () => {
             .then(data => {
                 setCountry(data);
                 setfilterCountry(data);
+            
                 console.log(data);
             });
     }, [])
 
     const handleRegion=(filter)=>{
-        if(filter==="Europe"){
+        if(filter==="All"){
+         
+            setfilterCountry(country);
+         
+        }
+        else if(filter==="Europe"){
             const europe=country.filter(data=>data.region==="Europe");
             setfilterCountry(europe);
+         
         }
         else if (filter==="Africa"){
             const Africa=country.filter(data=>data.region==="Africa");
@@ -39,6 +47,10 @@ const Home = () => {
             const Oceania=country.filter(data=>data.region==="Oceania");
             setfilterCountry(Oceania);
         }
+        else if(filter==="Antarctica"){
+            const Antarctica=country.filter(data=>data.region==="Antarctic");
+            setfilterCountry(Antarctica);
+        }
     }
     return (
         <div>
@@ -50,9 +62,10 @@ const Home = () => {
                 <div className="dropdown dropdown-hover">
                     <div tabIndex={0} role="button" className="btn m-1"> <FaSortAmountDown /> sort by continent</div>
                     <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                        <li onClick={()=>handleRegion("All")} ><a>All continet </a></li>
                         <li onClick={()=>handleRegion("Asia")} ><a>Asia</a></li>
-                        <li onClick={()=>handleRegion("Europe")} ><a>Europe</a></li>
-                        <li  ><a>Antarctica</a></li>
+                        <li  onClick={()=>handleRegion("Europe")} ><a>Europe</a></li>
+                        <li  onClick={()=>handleRegion("Antarctica")} ><a>Antarctica</a></li>
                         <li onClick={()=>handleRegion("Americas")}><a>America</a></li>
                         <li  onClick={()=>handleRegion("Africa")}><a>Africa</a></li>
                         <li onClick={()=>handleRegion("Oceania")} ><a>Australia (Oceania)</a></li>
@@ -61,7 +74,7 @@ const Home = () => {
             </div>
 
 
-
+                
 
             <div className="grid grid-cols-1 md:grid-cols-3 mt-10">
                 {
@@ -70,7 +83,7 @@ const Home = () => {
                         else if(val.name.common.toLocaleLowerCase().includes(search.toLocaleLowerCase()))return val;
                     })
                     
-                    .map(country => <Countries country={country} key={country.ccn3}></Countries>)
+                    .map(country => <Countries country={country} key={country.cca3}></Countries>)
                 }
             </div>
         </div>
