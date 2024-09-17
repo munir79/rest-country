@@ -15,9 +15,9 @@ const NavBar = () => {
   };
 const NavOption=<>
 
-<Link>  <li><a>Item 1</a></li></Link>
-<Link>  <li><a>Item 2</a></li></Link>
-<Link>  <li><a>Item 3</a></li></Link>
+<Link to='/'>  <li><a>Home</a></li></Link>
+<Link to='/latest'>  <li><a>Latest</a></li></Link>
+<Link >  <li><a>Item 3</a></li></Link>
 
 </>
 

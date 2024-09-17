@@ -10,6 +10,7 @@ import {
 import MainLayOut from './MAinLayOut/MainLayOut.jsx';
 import Home from './Pages/Home.jsx';
 import Country from './Pages/Country/Country.jsx';
+import Latest from './Pages/Latest/Latest.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         path:'/country/:cca3',
         element:<Country></Country>,
         loader: ({ params }) => fetch(`https://restcountries.com/v3.1/alpha/${params.cca3}`)
+      },
+      {
+        path:'/latest',
+        element:<Latest></Latest>
       }
      ]
   },
