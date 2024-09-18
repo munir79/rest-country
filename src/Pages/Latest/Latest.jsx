@@ -1,6 +1,6 @@
 
 import cover from '../../assets/cover/unsplash__uPh7lbSm4Y.png'
-// import cover1 from '../../assets/cover/pngegg 1.png'
+import cover1 from '../../assets/cover/pngegg 1.png'
 import main from '../../assets/section/main.png';
 import main1 from '../../assets/section/image (1).png';
 import main2 from '../../assets/section/image (2).png';
@@ -26,16 +26,18 @@ const Latest = () => {
     ]
     return (
         <div>
-      <h3 className="text-[#000000] text-3xl text-center ">Travel. It’s the best investment <br /> you can make.</h3>
+      <h3 className="text-[rgb(141,63,56)] mt-4 font-bold text-3xl text-center ">Travel. It’s the best investment <br /> you can make.</h3>
 
-      <section className='mt-20 mb-20 '>
-  <div className='relative'>
-  <img  src={cover} alt="" />
- 
+      <section className='mt-28  mb-20 relative'>
+  <img className='-mb-12' src={cover} alt="" />
+
+  <div className='absolute' style={{ right: '100px', bottom: '0px' }}>
+    <img className='h-[550px] mb-0' src={cover1} alt="" />
   </div>
-      </section>
+</section>
 
-      <section className='flex flex-col md:flex-row'>
+
+      <section className='flex mt-10 flex-col md:flex-row'>
     <div >
      <div className='relative'>
      <img src={main} alt="" />

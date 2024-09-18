@@ -15,9 +15,9 @@ const NavBar = () => {
   };
 const NavOption=<>
 
-<Link to='/'>  <li><a>Home</a></li></Link>
-<Link to='/latest'>  <li><a>Latest</a></li></Link>
-<Link >  <li><a>Item 3</a></li></Link>
+<Link to='/'>  <li className="text-xl font-bold"><a>Home</a></li></Link>
+<Link to='/latest'>  <li className="text-xl font-bold"><a>Latest</a></li></Link>
+
 
 </>
 
