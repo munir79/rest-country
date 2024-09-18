@@ -45,7 +45,7 @@ const NavOption=<>
               {NavOption}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+      <Link to='/'>    <a className="btn btn-ghost text-xl">Rest Country</a></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

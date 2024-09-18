@@ -9,7 +9,7 @@ const LatestCard = ({data}) => {
                 <img src={ image} alt="" /> </div>
             <div className="m-3 p-2">
               <p>{des}</p>
-              <button>read more</button>
+              <button  className=" m-3 btn btn-active btn-accent">read more</button>
             </div>
         </div>
     );
